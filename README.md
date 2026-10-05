@@ -1,6 +1,6 @@
 # Neurona artificial para el riego de plantas
 
-Talle IA Generativa. Una neurona artificial con **dos entradas, dos pesos, un sesgo y activación sigmoide** decide si una planta necesita riego (`1` = regar, `0` = no regar).
+Taller IA Generativa. Una neurona artificial con **dos entradas, dos pesos, un sesgo y activación sigmoide** decide si una planta necesita riego (`1` = regar, `0` = no regar).
 
 
 ## Problema
