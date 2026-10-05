@@ -1,0 +1,79 @@
+
+Datos normalizados:
+[[0.8  0.36]
+ [0.7  0.44]
+ [0.65 0.56]
+ [0.55 0.5 ]
+ [0.5  0.64]
+ [0.4  0.6 ]
+ [0.35 0.5 ]
+ [0.3  0.64]
+ [0.2  0.7 ]
+ [0.1  0.76]]
+
+=== Entrenamiento base: tasa_aprendizaje = 0.5, epocas = 10000 ===
+Época      1 | Error cuadrático medio = 0.294660
+Época   1000 | Error cuadrático medio = 0.030056
+Época   2000 | Error cuadrático medio = 0.019328
+Época   3000 | Error cuadrático medio = 0.014447
+Época   4000 | Error cuadrático medio = 0.011595
+Época   5000 | Error cuadrático medio = 0.009705
+Época   6000 | Error cuadrático medio = 0.008352
+Época   7000 | Error cuadrático medio = 0.007332
+Época   8000 | Error cuadrático medio = 0.006534
+Época   9000 | Error cuadrático medio = 0.005891
+Época  10000 | Error cuadrático medio = 0.005362
+
+Peso humedad     : -33.2571
+Peso temperatura : 0.1955
+Sesgo            : 14.8320
+Error final      : 0.005361
+
+Caso | Humedad | Temperatura | Probabilidad | Respuesta | Esperada
+   1 |     80% |        18°C |       0.0000 |         0 |        0
+   2 |     70% |        22°C |       0.0002 |         0 |        0
+   3 |     65% |        28°C |       0.0013 |         0 |        0
+   4 |     55% |        25°C |       0.0335 |         0 |        0
+   5 |     50% |        32°C |       0.1582 |         0 |        0
+   6 |     40% |        30°C |       0.8384 |         1 |        1
+   7 |     35% |        25°C |       0.9641 |         1 |        1
+   8 |     30% |        32°C |       0.9932 |         1 |        1
+   9 |     20% |        35°C |       0.9998 |         1 |        1
+  10 |     10% |        38°C |       1.0000 |         1 |        1
+
+=== Pruebas con condiciones nuevas ===
+Humedad | Temperatura | Probabilidad | Decisión
+    75% |        30°C |       0.0000 | 0
+    45% |        34°C |       0.4998 | 0
+    25% |        22°C |       0.9986 | 1
+    50% |        25°C |       0.1546 | 0
+    30% |        40°C |       0.9934 | 1
+
+=== Experimentos con los parámetros ===
+Prueba               Épocas  Tasa  Error final  Correctas  P(45%, 34°C)
+Prueba base           10000   0.5     0.005361      10/10        0.4998
+Pocas épocas            100   0.5     0.089490      10/10        0.5451
+Cantidad intermedia    1000   0.5     0.030038      10/10        0.5603
+Más épocas            20000   0.5     0.002795      10/10        0.4856
+Tasa pequeña          10000  0.01     0.066192      10/10        0.5621
+Tasa moderada         10000   0.1     0.019328      10/10        0.5411
+Tasa alta             10000   1.0     0.002795      10/10        0.4857
+Tasa muy alta         10000   2.0     0.001396      10/10        0.4713
+
+=== Prueba con umbrales (sin volver a entrenar) ===
+Humedad | Temperatura | Probabilidad | U=0.4 | U=0.5 | U=0.6
+    80% |        18°C |       0.0000 |     0 |     0 |     0
+    70% |        22°C |       0.0002 |     0 |     0 |     0
+    65% |        28°C |       0.0013 |     0 |     0 |     0
+    55% |        25°C |       0.0335 |     0 |     0 |     0
+    50% |        32°C |       0.1582 |     0 |     0 |     0
+    40% |        30°C |       0.8384 |     1 |     1 |     1
+    35% |        25°C |       0.9641 |     1 |     1 |     1
+    30% |        32°C |       0.9932 |     1 |     1 |     1
+    20% |        35°C |       0.9998 |     1 |     1 |     1
+    10% |        38°C |       1.0000 |     1 |     1 |     1
+    75% |        30°C |       0.0000 |     0 |     0 |     0
+    45% |        34°C |       0.4998 |     1 |     0 |     0
+    25% |        22°C |       0.9986 |     1 |     1 |     1
+    50% |        25°C |       0.1546 |     0 |     0 |     0
+    30% |        40°C |       0.9934 |     1 |     1 |     1
