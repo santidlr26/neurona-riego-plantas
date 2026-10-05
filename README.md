@@ -1,8 +1,7 @@
 # Neurona artificial para el riego de plantas
 
-Actividad de la Universidad Santo Tomás (Tunja). Una neurona artificial con **dos entradas, dos pesos, un sesgo y activación sigmoide** decide si una planta necesita riego (`1` = regar, `0` = no regar).
+Talle IA Generativa. Una neurona artificial con **dos entradas, dos pesos, un sesgo y activación sigmoide** decide si una planta necesita riego (`1` = regar, `0` = no regar).
 
-> Los datos son didácticos y no representan una recomendación agronómica para una especie real.
 
 ## Problema
 
@@ -21,7 +20,7 @@ uv sync
 uv run main.py
 ```
 
-Requiere Python >= 3.12 y NumPy (instalado por `uv`). Los resultados son reproducibles: los pesos iniciales usan la semilla 42.
+Requiere Python >= 3.12 y NumPy. Los resultados son reproducibles: los pesos iniciales usan la semilla 42.
 
 ## Resultado del entrenamiento base (tasa 0.5, 10000 épocas)
 
@@ -72,7 +71,6 @@ Solo se cambia el parámetro indicado (misma semilla y mismos datos).
 | Tasa alta | 10000 | 1.0 | 0.002795 | 10 | 0.4857 | Rápido |
 | Tasa muy alta | 10000 | 2.0 | 0.001396 | 10 | 0.4713 | Rápido |
 
-Nota: la columna "Aprendizaje" es una valoración propia a partir de qué tan bajo quedó el error y qué tan rápido bajó. En ninguna prueba el error subió entre épocas, así que **no se observó inestabilidad**, ni siquiera con tasa 2.0.
 
 ## Umbral (sin reentrenar)
 
